@@ -14,6 +14,7 @@ io.on('connection', (socket) => {
     console.log('New WS connected...');
 
     socket.on('msg', (msg) => {
+        socket.emit('msg', msg) // bu o'ziga ko'rinmiydi boshqa userlarga ko'rinadi
         socket.broadcast.emit('msg', msg) // bu o'ziga ko'rinmiydi boshqa userlarga ko'rinadi
     })
 })
